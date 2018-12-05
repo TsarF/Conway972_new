@@ -1,0 +1,49 @@
+
+public class NeighborCheck 
+{
+	//Ethan Auyeung
+	public boolean[][] cellsmatrix= new boolean[100][100];
+	public int[][] neighborsmatrix = new int[100][100];
+	// Nikita Cheblokov in colaboration with Ethan Auyeung
+	public static int NeighborAmount(boolean matrix[][], int x, int y, int neighbormatrix[][])
+	{
+		int limitX = 100;
+		int limitY = 100;
+		int neighbors = 0;
+		if(matrix[x+1][y+1] == true && x+1 > 1 && x+1<limitX && y+1 > 1 && y+1<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x+1][y] == true && x > 1+1 && x+1<limitX && y > 1 && y<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x+1][y-1]==true && x+1 > 1 && x+1<limitX && y-1 > 1 && y-1<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x][y+1]==true && x > 1 && x<limitX && y+1 > 1 && y+1<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x-1][y-1]==true && x-1 > 1 && x-1<limitX && y-1 > 1 && y-1<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x-1][y]==true && x-1 > 1 && x-1<limitX && y > 1 && y<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x-1][y+1]==true && x-1 > 1 && x-1<limitX && y+1 > 1 && y+1<limitY)
+		{
+			neighbors++;
+		}
+		if(matrix[x][y+1]==true && x > 1 && x<limitX && y+1 > 1 && y+1<limitY)
+		{
+			neighbors++;
+		}
+		neighbormatrix[x][y] = neighbors;
+		return neighbors;
+	}
+}
+
